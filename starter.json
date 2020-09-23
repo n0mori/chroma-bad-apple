@@ -1,0 +1,12 @@
+{
+    "title": "Bad Apple!!",
+    "description": "Bad Apple!! port for playing in Razer keyboards. Tested and developed in a Razer Huntsman Tournament Edition",
+    "author": {
+        "name": "n0mori",
+        "contact": "nick33omori@gmail.com"
+    },
+    "device_supported": [
+        "keyboard"
+    ],
+    "category": "application"
+}
