@@ -12,6 +12,7 @@ class RazerService:
     print(body)
     self.sessionid = body['sessionid']
     self.uri = body['uri']
+    self.effects = []
 
   def __del__(self):
     time.sleep(5)
@@ -19,8 +20,11 @@ class RazerService:
 
   def send_layout(self, layout):
     time.sleep(1)
-    print(requests.put(url = rs.uri + '/keyboard', data = {'effect': 'CHROMA_STATIC', 'params': {'color': 0xFF00FF}}).text)
-
+    resp = requests.post(url = rs.uri + '/keyboard', json = open('effect.json', 'r')).json()
+    self.effects.append(resp['id'])
+    print(self.effects)
+    print(requests.post(url = rs.uri + '/effect', json = {"id": self.effects[0]}).text)
+# {'effect': 'CHROMA_STATIC', 'params': {'color': 0xFF00FF}}
 rs = RazerService()
 print(rs.sessionid, rs.uri)
 rs.send_layout(None)
