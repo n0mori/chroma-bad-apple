@@ -18,8 +18,10 @@ class RazerService:
     print(requests.delete(url=self.uri))
 
   def send_layout(self, layout):
-    pass
+    time.sleep(1)
+    print(requests.put(url = rs.uri + '/keyboard', data = {'effect': 'CHROMA_STATIC', 'params': {'color': 0xFF00FF}}).text)
 
 rs = RazerService()
 print(rs.sessionid, rs.uri)
+rs.send_layout(None)
 del rs
