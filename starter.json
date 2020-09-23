@@ -6,7 +6,8 @@
         "contact": "nick33omori@gmail.com"
     },
     "device_supported": [
-        "keyboard"
+        "keyboard",
+        "chromalink"
     ],
     "category": "application"
 }
